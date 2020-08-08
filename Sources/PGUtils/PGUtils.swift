@@ -1,15 +1,13 @@
 import UIKit
 
-class PGUtils {
-    
-    
+public class PGUtils {
     /// Allows you to convert 6 digit hexadecimal string into a UIColor instance
     ///  - Warning: The # symbol is stripped from the beginning of the string submitted here.
     /// - Parameters:
     ///   - hexString: 6 digit hexadecimal string
     ///   - alpha: A number between 0.0 and 1.0indicating how transparent the color is
     /// - Returns: A UIColor
-    class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
+    internal class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
       let r, g, b: CGFloat
       let offset = hexString.hasPrefix("#") ? 1 : 0
       let start = hexString.index(hexString.startIndex, offsetBy: offset)
@@ -23,6 +21,11 @@ class PGUtils {
         return UIColor(red: r, green: g, blue: b, alpha: alpha)
       }
       return UIColor(red: 0, green: 0, blue: 0, alpha: alpha)
+    }
+    
+    /// The most eye-praising color
+    public static var pgColor: UIColor {
+        return self.colorFromHexString("006736")
     }
     
 }
