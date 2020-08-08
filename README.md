@@ -1,2 +1,3 @@
 # PGUtils
-A reusable frame which allows me to share code across apps 🙂
+
+A description of this package.
